@@ -1,0 +1,57 @@
+from abc import ABC, abstractmethod
+class Animal(ABC):
+    @abstractmethod
+    def get_nombre_cientifico(self):
+        pass
+
+    @abstractmethod
+    def get_sonido(self):
+        pass
+
+    @abstractmethod
+    def get_alimentos(self):
+        pass
+
+    @abstractmethod
+    def get_habitat(self):
+        pass
+
+class Canido(Animal):
+    pass
+
+class Felino(Animal):
+    pass
+
+class Perro(Canido):
+    def get_nombre_cientifico(self): return "Canis lupus familiaris"
+    def get_sonido(self): return "Ladrido"
+    def get_alimentos(self): return "Carnívora"
+    def get_habitat(self): return "Doméstico"
+
+class Lobo(Canido):
+    def get_nombre_cientifico(self): return "Canis lupus"
+    def get_sonido(self): return "Aullido"
+    def get_alimentos(self): return "Carnívora"
+    def get_habitat(self): return "Bosque"
+
+class Leon(Felino):
+    def get_nombre_cientifico(self): return "Panthera leo"
+    def get_sonido(self): return "Rugido"
+    def get_alimentos(self): return "Carnívora"
+    def get_habitat(self): return "Pradera"
+
+class Gato(Felino):
+    def get_nombre_cientifico(self): return "Felis silvestris catus"
+    def get_sonido(self): return "Maullido"
+    def get_alimentos(self): return "Ratones"
+    def get_habitat(self): return "Doméstico"
+
+
+
+if __name__ == "__main__":
+    animales = [Perro(), Lobo(), Leon(), Gato()]
+    for animal in animales:
+        print(f"Nombre científico: {animal.get_nombre_cientifico()}")
+        print(f"Sonido: {animal.get_sonido()}")
+        print(f"Alimentos: {animal.get_alimentos()}")
+        print(f"Hábitat: {animal.get_habitat()}")
